@@ -16,11 +16,7 @@
     "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"],
-      "@core/*": ["src/core/*"],
-      "@config/*": ["./src/config/*"],
-      "@modules/*": ["./src/modules/*"],
-      "@middleware/*": ["./src/middleware/*"]
+      "@/*": ["./src/*"]
     }
   },
 

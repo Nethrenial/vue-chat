@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { sign as jwtSign } from "jsonwebtoken";
-import User from "../auth/user.model";
-import { Controller, Post } from "../../core";
-import { Validate } from "../../core/decorators/validate.decorator";
-import { UserRegisterDTO } from "../../modules/auth/user-register.dto";
-import { imagekit } from "../../config/imagekit.config";
+import User from "@/modules/auth/user.model";
+import { Controller, Post } from "@/core";
+import { Validate } from "@/core/decorators/validate.decorator";
+import { UserRegisterDTO } from "@/modules/auth/user-register.dto";
+import { imagekit } from "@/config/imagekit.config";
 
 @Controller("/auth")
 export default class AuthController {
@@ -34,7 +34,7 @@ export default class AuthController {
     });
     if (existingUser) {
       res.status(400).json({
-        message: `Username: "&${existingUser.username}" already exists`,
+        message: `Username: "${existingUser.username}" already exists`,
       });
       return;
     }
