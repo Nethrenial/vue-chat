@@ -1,16 +1,24 @@
-import "reflect-metadata";
 import { createServer } from "http";
-import app from "@utils/Application";
-import { createMongoConnection } from "@/config/database.config";
+import { createMongoConnection } from "./config";
+import { app } from "./bootstrap";
+import { connectToImageKit } from "./config";
+
+//creating the server
+const expressServer = createServer(app.instance);
 
 //connect to mongoDB
 createMongoConnection();
 
-// http server
-const expressServer = createServer(app.instance);
+//connect to ImageKit
+connectToImageKit({
+  publicKey: process.env.IMAGE_KIT_PUBLIC_KEY as string,
+  privateKey: process.env.IMAGE_KIT_PRIVATE_KEY as string,
+  urlEndpoint: process.env.IMAGE_KIT_URL_ENDPOINT as string,
+});
 
 //start the server
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
+
 expressServer.listen(PORT, () => {
   console.log(`[server] : Server is running on port ${PORT}`);
 });

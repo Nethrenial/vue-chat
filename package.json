@@ -6,32 +6,38 @@
   "scripts": {
     "start": "node -r tsconfig-paths/register dist/index.js",
     "dev": "nodemon -r tsconfig-paths/register src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "production": "yarn build && yarn start"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "class-transformer": "^0.5.1",
+    "class-transformer-validator": "^0.9.1",
+    "class-validator": "^0.13.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "formidable": "^2.0.1",
+    "imagekit": "^3.2.5",
     "jsonwebtoken": "^8.5.1",
+    "module-alias": "^2.2.2",
     "mongoose": "^6.2.10",
+    "multer": "^1.4.4",
     "nodemon": "^2.0.15",
-    "reflect-metadata": "^0.1.13",
-    "validator": "^13.7.0"
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
-    "@types/formidable": "^2.0.4",
     "@types/jsonwebtoken": "^8.5.8",
+    "@types/module-alias": "^2.0.1",
+    "@types/multer": "^1.4.7",
     "@types/node": "^17.0.23",
-    "@types/validator": "^13.7.2",
     "ts-node": "^10.7.0",
+    "tsc-alias": "^1.6.6",
     "tsconfig-paths": "^3.14.1",
     "typescript": "^4.6.3"
   }
