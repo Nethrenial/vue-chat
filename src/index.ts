@@ -1,7 +1,6 @@
 import { createServer } from "http";
-import { createMongoConnection } from "./config";
-import { app } from "./bootstrap";
-import { connectToImageKit } from "./config";
+import { app } from "@/bootstrap";
+import { connectToImageKit, createMongoConnection } from "@/config";
 
 //creating the server
 const expressServer = createServer(app.instance);

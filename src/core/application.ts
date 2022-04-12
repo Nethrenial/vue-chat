@@ -9,7 +9,7 @@ import {
   NethrenialApplicationRouter,
 } from "./types";
 
-export default class NethrenialApplicationFactory {
+export class NethrenialApplicationFactory {
   /**
    * Express application instance.
    */

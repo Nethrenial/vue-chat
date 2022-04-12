@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
-import NethrenialApplicationFactory from "./core/application";
-import { controllers } from "./modules";
+import { NethrenialApplicationFactory } from "@/core";
+import { controllers } from "@/modules";
 
 dotenv.config();
 
